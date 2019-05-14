@@ -17,3 +17,4 @@ library(cluster)
 agnes1<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
 (d3 <- as.dendrogram(agnes1)) # 3 branches
 plot(d3)
+cutree(agnes1,k=5)
