@@ -14,6 +14,10 @@ smp_data <- sample(seq_len(nrow(data_clust)), size = smp_size)
 data_clust_smp<- data_clust[smp_data, ]
 data_scale <- scale(data_clust_smp)
 library(cluster)
+<<<<<<< HEAD
 agnes1<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
 (d3 <- as.dendrogram(agnes1)) # 3 branches
 plot(d3)
+=======
+agnes1<-agnes(data_clust,diss=FALSE,metric="euclidean", stand=TRUE,method="ward")
+>>>>>>> 76fff84808898c823ba505dc710d6db37941ec91
