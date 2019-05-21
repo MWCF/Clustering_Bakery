@@ -17,4 +17,6 @@ library(cluster)
 agnes1<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
 (d3 <- as.dendrogram(agnes1)) # 3 branches
 plot(d3)
+library(NbClust)
+clustsize<-NbClust(data_scale, diss=NULL, distance = "euclidean", min.nc=2, max.nc = 15, method = "ward.D2", index = "all")
 cutree(agnes1,k=5)
