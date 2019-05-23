@@ -26,3 +26,28 @@ qr(data_scale)$rank
 Data_Clean<-data_scale[,-c(4,13,15,23,28,33,34,45,50,58)]# remove no data columns
 library(NbClust)
 NBClust<-NbClust(data = Data_Clean, diss = NULL, distance = "euclidean", min.nc = 2, max.nc = 10, method = "ward.D", index = "all")
+#based on NbClust majority rule, best number of clusters is 4
+#Nbclust result on euclidean distance model with ward D method
+#*** : The Hubert index is a graphical method of determining the number of clusters.
+#In the plot of Hubert index, we seek a significant knee that corresponds to a 
+#significant increase of the value of the measure i.e the significant peak in Hubert
+#index second differences plot. 
+#
+#*** : The D index is a graphical method of determining the number of clusters. 
+#In the plot of D index, we seek a significant knee (the significant peak in Dindex
+#                                                    second differences plot) that corresponds to a significant increase of the value of
+#the measure. 
+#
+#******************************************************************* 
+#  * Among all indices:                                                
+# * 5 proposed 2 as the best number of clusters 
+# 2 proposed 3 as the best number of clusters 
+# 6 proposed 4 as the best number of clusters 
+# 3 proposed 5 as the best number of clusters 
+# 3 proposed 6 as the best number of clusters 
+# 1 proposed 9 as the best number of clusters 
+# 3 proposed 10 as the best number of clusters 
+
+#***** Conclusion *****                            
+  
+#* According to the majority rule, the best number of clusters is  4 
