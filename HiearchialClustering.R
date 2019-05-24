@@ -44,7 +44,7 @@ NBClust<-NbClust(data = Data_Clean, diss = NULL, distance = "euclidean", min.nc 
 
 #* According to the majority rule, the best number of clusters is  4 
 library(cluster)
-agnes2<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
+agnes2<-agnes(Data_Clean, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
 (d4 <- as.dendrogram(agnes2)) # create dendrogram
 plot(d4)
 d4cut<-cutree(agnes2,k=4)
