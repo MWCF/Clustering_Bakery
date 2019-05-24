@@ -13,14 +13,6 @@ set.seed(100)
 smp_data <- sample(seq_len(nrow(data_clust)), size = smp_size)
 data_clust_smp<- data_clust[smp_data, ]
 data_scale <- scale(data_clust_smp)
-library(cluster)
-agnes1<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
-(d3 <- as.dendrogram(agnes1)) # 3 branches
-plot(d3)
-dim(data_scale)
-library(NbClust)
-clustsize<-NbClust(data_scale, diss=NULL, distance = "euclidean", min.nc=2, max.nc = 15, method = "ward.D2", index = "all")
-cutree(agnes1,k=5)
 dim(data_scale)
 qr(data_scale)$rank
 Data_Clean<-data_scale[,-c(4,13,15,23,28,33,34,45,50,58)]# remove no data columns
@@ -49,5 +41,12 @@ NBClust<-NbClust(data = Data_Clean, diss = NULL, distance = "euclidean", min.nc 
 # 3 proposed 10 as the best number of clusters 
 
 #***** Conclusion *****                            
-  
+
 #* According to the majority rule, the best number of clusters is  4 
+library(cluster)
+agnes2<-agnes(data_scale, diss=FALSE, metric="euclidean", stand=TRUE, method="ward")
+(d4 <- as.dendrogram(agnes2)) # create dendrogram
+plot(d4)
+d4cut<-cutree(agnes2,k=4)
+write.csv(data_clust_smp,'C:/Users/Wai_f/documents/smp_data.csv')
+
