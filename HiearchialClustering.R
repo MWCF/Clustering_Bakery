@@ -49,4 +49,8 @@ agnes2<-agnes(Data_Clean, diss=FALSE, metric="euclidean", stand=TRUE, method="wa
 plot(d4)
 d4cut<-cutree(agnes2,k=4)
 write.csv(data_clust_smp,'C:/Users/Wai_f/documents/smp_data.csv')
-
+grouphc<-data.frame(d4cut)
+write.csv(grouphc,'C:/Users/Wai_f/documents/grouphc.csv')
+Groupeddata<-cbind(grouphc,data_clust_smp)
+write.csv(Groupeddata,'C:/Users/Wai_f/documents/Grouped_data.csv')
+# clusters can now be analysed
