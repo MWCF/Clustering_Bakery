@@ -1,3 +1,4 @@
+# data obtained from kaggle : https://www.kaggle.com/sulmansarwar/transactions-from-a-bakery
 Revised_Data <- read.csv("C:/Users/Wai_f/documents/Revised_Data.csv")
 View(Revised_Data)
 library(data.table)
